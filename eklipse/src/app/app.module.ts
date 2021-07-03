@@ -6,6 +6,18 @@ import { AppComponent } from './app.component';
 import { BillingReportComponent } from './billing-report/billing-report.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+
+
+
+//componentes 
+import { MatTableModule } from "@angular/material/table";
+import { MatCheckboxModule } from "@angular/material/checkbox";
+import { MatFormFieldModule } from '@angular/material/form-field';
+
+
+
+import { HttpClientModule } from "@angular/common/http";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,7 +26,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatTableModule,
+    MatCheckboxModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]
