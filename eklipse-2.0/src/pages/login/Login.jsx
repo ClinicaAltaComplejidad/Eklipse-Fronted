@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 //librarie
 import { Input } from '@chakra-ui/react';
+
+import { DataContext } from '../../context/LoginContext';
 
 function Login() {
 
@@ -8,6 +10,8 @@ function Login() {
         userName: '',
         pass: ''
     });
+
+    const {setLogin} = useContext( DataContext );
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -22,7 +26,13 @@ function Login() {
             })
         })
         .then(response => response.json() )
-        .then(data => console.log('soy la data -> ', data) )
+        .then(data => {
+            if (data.Message === 'OK') {
+                setLogin({
+                    login: true,
+                });
+            }
+        })
         .catch(error => console.log(error) );
         console.log(userState);
     }
