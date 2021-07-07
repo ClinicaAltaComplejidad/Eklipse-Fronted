@@ -11,6 +11,19 @@ function Login() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        fetch('http://localhost:4000/api.v1/eklipse.v2/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                user: userState.userName,
+                password: userState.pass
+            })
+        })
+        .then(response => response.json() )
+        .then(data => console.log('soy la data -> ', data) )
+        .catch(error => console.log(error) );
         console.log(userState);
     }
 
