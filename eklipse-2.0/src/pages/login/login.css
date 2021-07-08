@@ -108,9 +108,7 @@
 }
 
 .container_logo_clinica {
-    background-color: black;
-    height: 100px;
-    width: 80%;
+    display: none;
 }
 
 /*media querys*/
@@ -145,5 +143,9 @@
         margin-top: 30px;
         width: 35%;
     }
-
+    .container_logo_clinica {
+        display: block;
+        height: 100px;
+        width: 80%;
+    }
 }

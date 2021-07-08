@@ -5,6 +5,7 @@ import { Input } from '@chakra-ui/react';
 import backgroundImage from '../../assets/img/backgroun_form.jpg';
 import keyImage from '../../assets/img/key.svg';
 import userImage from '../../assets/img/user.svg';
+import logo from '../../assets/img/marca_de_agua.png';
 import './login.css';
 
 
@@ -61,7 +62,7 @@ function Login() {
                 </section>
                 <section className="container_inputs">
                     <section className="container_logo_clinica">
-                        <img src="#" alt="" />
+                        <img src={logo} alt="" loading="lazy"  width="250" />
                     </section>
                     <h1 className="form_title">LOGIN 🚀</h1>
                     <div className="form_input_container">
