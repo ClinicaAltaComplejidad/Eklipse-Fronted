@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react';
+import {useHistory} from 'react-router-dom';
 import { DataContext } from '../../context/LoginContext';
 //librarie
 import { Input } from '@chakra-ui/react';
@@ -11,6 +12,8 @@ import './login.css';
 
 function Login() {
 
+    const history = useHistory();
+
     const [userState, setUserState] = useState({
         userName: '',
         pass: ''
@@ -20,7 +23,7 @@ function Login() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch('http://localhost:4000/api.v1/eklipse.v2/login', {
+        fetch('http://172.16.4.176:4000/api.v1/eklipse.v2/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -33,9 +36,12 @@ function Login() {
             .then(response => response.json())
             .then(data => {
                 if (data.Message === 'OK') {
+                    console.log('data user -> ', data);
+                    localStorage.setItem('token', data.token);
                     setLogin({
                         login: true,
                     });
+                    history.push('/test');
                 }
             })
             .catch(error => console.log(error));
