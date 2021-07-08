@@ -1,8 +1,10 @@
 import React, { useState, useContext } from 'react';
+import { DataContext } from '../../context/LoginContext';
 //librarie
 import { Input } from '@chakra-ui/react';
+import backgroundImage  from '../../assets/img/backgroun_form.jpg';
+import './login.css';
 
-import { DataContext } from '../../context/LoginContext';
 
 function Login() {
 
@@ -45,21 +47,22 @@ function Login() {
     }
 
     return (
-        <form className="form" onSubmit={handleSubmit}>
-            <picture className="form_image_container">
-                <img src="#" alt="#" />
-            </picture>
-            <h1 className="form_title">Log - In</h1>
-            <div className="form_input_container">
-                <Input
-                    onChange={handleInput}
-                    name="userName"
-                    type="text"
-                    variant="flushed"
-                    placeholder="Usuario"
-                />
-            </div>
-            <div className="form_input_container">
+        <div className="form_container">
+            <form className="form" onSubmit={handleSubmit}>
+                    <section className="form_image_container">
+                        <img src={backgroundImage} alt="#" width="600"/>
+                    </section>
+                    <h1 className="form_title">Log - In 🚀</h1>
+                    <div className="form_input_container">
+                    <Input
+                        onChange={handleInput}
+                        name="userName"
+                        type="text"
+                        variant="flushed"
+                        placeholder="Usuario"
+                    />
+                 </div>
+                <div className="form_input_container">
                 <Input
                     onChange={handleInput}
                     name="pass"
@@ -68,13 +71,15 @@ function Login() {
                     placeholder="Contraseña"
                 />
             </div>
-            <div className="form_input_container">
+            <div className="form_input_container form_input_container--input-buttom ">
                 <Input
+                    className="form-input_button"
                     type="submit"
                     value="Ingresar"
                 />
             </div>   
-        </form>
+            </form>
+        </div>
     )
 }
 
