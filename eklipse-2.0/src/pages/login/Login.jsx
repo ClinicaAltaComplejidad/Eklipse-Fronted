@@ -50,15 +50,21 @@ function Login() {
         <div className="form_container">
             <form className="form" onSubmit={handleSubmit}>
                     <section className="form_image_container">
-                        <img src={backgroundImage} alt="#" width="600"/>
+                        <div className="luxury_background_for_image">
+                            <p className="form_title_luxury">
+                                EKLIPSE
+                                <hr />
+                            </p>
+                        </div>
+                        <img src={backgroundImage} alt="#" width="800" loading="lazy"/>
                     </section>
-                    <h1 className="form_title">Log - In 🚀</h1>
+                    <h1 className="form_title">LOGIN 🚀</h1>
                     <div className="form_input_container">
                     <Input
                         onChange={handleInput}
                         name="userName"
                         type="text"
-                        variant="flushed"
+                        variant="outline"
                         placeholder="Usuario"
                     />
                  </div>
@@ -67,7 +73,7 @@ function Login() {
                     onChange={handleInput}
                     name="pass"
                     type="password"
-                    variant="flushed"
+                    variant="outline"
                     placeholder="Contraseña"
                 />
             </div>
