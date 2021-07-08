@@ -3,6 +3,8 @@ import { DataContext } from '../../context/LoginContext';
 //librarie
 import { Input } from '@chakra-ui/react';
 import backgroundImage  from '../../assets/img/backgroun_form.jpg';
+import keyImage from '../../assets/img/key.svg';
+import userImage from '../../assets/img/user.svg';
 import './login.css';
 
 
@@ -53,13 +55,15 @@ function Login() {
                         <div className="luxury_background_for_image">
                             <p className="form_title_luxury">
                                 EKLIPSE
-                                <hr />
                             </p>
                         </div>
                         <img src={backgroundImage} alt="#" width="800" loading="lazy"/>
                     </section>
                     <h1 className="form_title">LOGIN 🚀</h1>
                     <div className="form_input_container">
+                    <section className="form_icon_container">
+                        <img src={userImage} alt="" width="200" loading="lazy" />
+                    </section>
                     <Input
                         onChange={handleInput}
                         name="userName"
@@ -69,6 +73,9 @@ function Login() {
                     />
                  </div>
                 <div className="form_input_container">
+                    <section className="form_icon_container">
+                        <img src={keyImage} alt="" width="200" loading="lazy" />
+                    </section>
                 <Input
                     onChange={handleInput}
                     name="pass"

@@ -56,11 +56,6 @@
     z-index: 4;
 }
 
-.form_title_luxury  hr {
-    width: 50%;
-    margin: auto;
-}
-
 .form_title {
     font-size: 18px;
     font-weight: 700;
@@ -72,10 +67,13 @@
 }
 
 .form_input_container {
+    border-radius: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 40px;
     margin-top: 8px;
     width: 55%;
-    border-radius: 15%;
 }
 
 .form_input_container input {
@@ -92,4 +90,11 @@
 
 .form-input_button:hover {
     background-color: #009c8c;
+}
+
+.form_icon_container {
+    border-radius: 5%;
+    margin-right: 5px;
+    width: 45px;
+    height: 96%;
 }
