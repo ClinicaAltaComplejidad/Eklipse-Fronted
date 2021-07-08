@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import { DataContext } from '../../context/LoginContext';
 //librarie
 import { Input } from '@chakra-ui/react';
-import backgroundImage  from '../../assets/img/backgroun_form.jpg';
+import backgroundImage from '../../assets/img/backgroun_form.jpg';
 import keyImage from '../../assets/img/key.svg';
 import userImage from '../../assets/img/user.svg';
 import './login.css';
@@ -15,7 +15,7 @@ function Login() {
         pass: ''
     });
 
-    const {setLogin} = useContext( DataContext );
+    const { setLogin } = useContext(DataContext);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -29,15 +29,15 @@ function Login() {
                 password: userState.pass
             })
         })
-        .then(response => response.json() )
-        .then(data => {
-            if (data.Message === 'OK') {
-                setLogin({
-                    login: true,
-                });
-            }
-        })
-        .catch(error => console.log(error) );
+            .then(response => response.json())
+            .then(data => {
+                if (data.Message === 'OK') {
+                    setLogin({
+                        login: true,
+                    });
+                }
+            })
+            .catch(error => console.log(error));
         console.log(userState);
     }
 
@@ -51,46 +51,51 @@ function Login() {
     return (
         <div className="form_container">
             <form className="form" onSubmit={handleSubmit}>
-                    <section className="form_image_container">
-                        <div className="luxury_background_for_image">
-                            <p className="form_title_luxury">
-                                EKLIPSE
-                            </p>
-                        </div>
-                        <img src={backgroundImage} alt="#" width="800" loading="lazy"/>
+                <section className="form_image_container">
+                    <div className="luxury_background_for_image">
+                        <p className="form_title_luxury">
+                            EKLIPSE
+                        </p>
+                    </div>
+                    <img src={backgroundImage} alt="#" width="800" loading="lazy" />
+                </section>
+                <section className="container_inputs">
+                    <section className="container_logo_clinica">
+                        <img src="#" alt="" />
                     </section>
                     <h1 className="form_title">LOGIN 🚀</h1>
                     <div className="form_input_container">
-                    <section className="form_icon_container">
-                        <img src={userImage} alt="" width="200" loading="lazy" />
-                    </section>
-                    <Input
-                        onChange={handleInput}
-                        name="userName"
-                        type="text"
-                        variant="outline"
-                        placeholder="Usuario"
-                    />
-                 </div>
-                <div className="form_input_container">
-                    <section className="form_icon_container">
-                        <img src={keyImage} alt="" width="200" loading="lazy" />
-                    </section>
-                <Input
-                    onChange={handleInput}
-                    name="pass"
-                    type="password"
-                    variant="outline"
-                    placeholder="Contraseña"
-                />
-            </div>
-            <div className="form_input_container form_input_container--input-buttom ">
-                <Input
-                    className="form-input_button"
-                    type="submit"
-                    value="Ingresar"
-                />
-            </div>   
+                        <section className="form_icon_container">
+                            <img src={userImage} alt="" width="200" loading="lazy" />
+                        </section>
+                        <Input
+                            onChange={handleInput}
+                            name="userName"
+                            type="text"
+                            variant="outline"
+                            placeholder="Usuario"
+                        />
+                    </div>
+                    <div className="form_input_container">
+                        <section className="form_icon_container">
+                            <img src={keyImage} alt="" width="200" loading="lazy" />
+                        </section>
+                        <Input
+                            onChange={handleInput}
+                            name="pass"
+                            type="password"
+                            variant="outline"
+                            placeholder="Contraseña"
+                        />
+                    </div>
+                    <div className="form_input_container form_input_container--input-buttom ">
+                        <Input
+                            className="form-input_button"
+                            type="submit"
+                            value="Ingresar"
+                        />
+                    </div>
+                </section>
             </form>
         </div>
     )
