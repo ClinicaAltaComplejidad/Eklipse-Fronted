@@ -36,16 +36,14 @@ function Login() {
             .then(response => response.json())
             .then(data => {
                 if (data.Message === 'OK') {
-                    console.log('data user -> ', data);
                     localStorage.setItem('token', data.token);
                     setLogin({
                         login: true,
                     });
-                    history.push('/test');
+                    history.push('/home');
                 }
             })
             .catch(error => console.log(error));
-        console.log(userState);
     }
 
     const handleInput = (e) => {
