@@ -3,6 +3,10 @@
     flex-direction: column;
 }
 
+.sidebar--close {
+    width: 0;
+}
+
 .sidebar_image {
     height: 15%;
     width: 100%;
@@ -30,10 +34,11 @@
     background-color: #008080;
     border: 1px solid #008080;
     border-radius: 8%;
+    cursor: pointer;
     height: 35px;
     position: absolute;
     right: -8px;
-    top: 20px;
+    top: 120px;
     transform: scaleX(-1);
     width: 40px;
 }
@@ -56,10 +61,11 @@
 }
 
 .sidebar_footer button {
-    background-color: slateblue;
+    background-color: #008080;
     border-radius: 3%;
     color: #ffffff;
     cursor: pointer;
     height: 50px;
     width: 100px;
 }
+
