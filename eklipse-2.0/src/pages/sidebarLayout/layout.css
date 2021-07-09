@@ -17,12 +17,13 @@
     height: 100%;
     width: 100%;
 }
+
 .sidebar {
-    background-color: blue;
     grid-area: sidebar;
     height: 100%;
     width: 100%;
 }
+
 .main {
     background-color: green;
     grid-area: main;

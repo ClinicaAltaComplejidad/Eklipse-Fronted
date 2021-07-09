@@ -1,0 +1,65 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar_image {
+    height: 15%;
+    width: 100%;
+}
+
+.sidebar_image img {
+    padding-top: 10%;
+    height: 90%;
+    width: 100%;
+}
+
+.btn_open {
+    display: flex;
+    height: 5%;
+    justify-content: space-around;
+    position: relative;
+    width: 100%;
+}
+
+.btn_open input {
+    display: none;
+}
+
+.btn_open label {
+    background-color: #008080;
+    border: 1px solid #008080;
+    border-radius: 8%;
+    height: 35px;
+    position: absolute;
+    right: -8px;
+    top: 20px;
+    transform: scaleX(-1);
+    width: 40px;
+}
+
+.btn_open input:checked ~ label {
+    transform: scaleX(1);
+}
+
+.sidebar_body {
+    height: 70%;
+    width: 100%;
+}
+
+.sidebar_footer {
+    display: flex;
+    height: 10%;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.sidebar_footer button {
+    background-color: slateblue;
+    border-radius: 3%;
+    color: #ffffff;
+    cursor: pointer;
+    height: 50px;
+    width: 100px;
+}

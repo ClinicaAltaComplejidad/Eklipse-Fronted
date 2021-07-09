@@ -11,7 +11,7 @@ import Test from './components/Test';
 import LayoutSidebar from './pages/sidebarLayout/LayoutSidebar';
 import Header from './components/Header';
 import Main from './components/Main';
-import Sidebar from './components/Sidebar';
+import Sidebar from './components/sidebar/Sidebar';
 
 function App() {
 
