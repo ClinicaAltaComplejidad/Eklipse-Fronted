@@ -1,12 +1,11 @@
 .sidebar{
+    display: flex;
+    flex-direction: column;
     position: fixed;
-    top: 0;
-    left: 0;
     height: 100%;
     width: 78px;
     background-color: #008080;
     padding: 6px 14px;
-    z-index: 1;
     transition: all 0.5s ease;
 }
 .sidebar.active{
@@ -44,30 +43,25 @@
 .sidebar.active .btn{
     left: 90%;
 }
-.sidebar ul{
-    margin-top: 20px;
-}
+
 .sidebar ul li{
     position: relative;
     height: 50px;
     width: 100%;
-    margin: 0 5px;
     list-style: none;
-    line-height: 50px;
-    margin: 5px 0;
 }
 /*sidebar styles end*/
 
 /*tooltip styles*/
 .sidebar ul li .tooltip{
     position: absolute;
-    left: 125px;
+    left: 120px;
     top: 0;
     transform: translate(-50% , -50%);
     border-radius: 6px;
     height: 35px;
     width: 120px;
-    background: #fff;
+    background-color: #ffffff;
     line-height: 35px;
     text-align: center;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
@@ -151,6 +145,4 @@
 .sidebar.active .profile #log_out{
     left: 85%;
 }
-
 /*btn logout styles*/
-  
