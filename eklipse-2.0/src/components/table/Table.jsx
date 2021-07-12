@@ -16,6 +16,9 @@ const datafixed = [
     {
         numberFacture: 1,
         numberOutput: 2,
+        benefitPlan: 3,
+        benefitPlan: 3,
+        benefitPlan: 3,
         benefitPlan: 3
     },
     {
@@ -60,12 +63,18 @@ function TableData({ data }) {
                         <Th>To convert</Th>
                         <Th>into</Th>
                         <Th isNumeric>multiply by</Th>
+                        <Th isNumeric>multiply by</Th>
+                        <Th isNumeric>multiply by</Th>
+                        <Th isNumeric>multiply by</Th>
                     </Tr>
                 </Thead>
                 <Tbody className="table_body">
                     {
                         datafixed.map(c => (
                             <Tr key={c.numberFacture}>
+                                <Td >{c.numberFacture}</Td>
+                                <Td >{c.numberFacture}</Td>
+                                <Td >{c.numberFacture}</Td>
                                 <Td >{c.numberFacture}</Td>
                                 <Td >{c.numberOutput}</Td>
                                 <Td isNumeric>{c.benefitPlan}</Td>
