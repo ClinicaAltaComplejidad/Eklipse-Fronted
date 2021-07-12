@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, { useContext } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -12,26 +12,28 @@ import LayoutSidebar from './pages/sidebarLayout/LayoutSidebar';
 import Header from './components/Header';
 import Main from './components/Main';
 import Sidebar from './components/sidebar/Sidebar';
+import Table from './components/table/Table';
 
 function App() {
 
-  const { isLogin } = useContext( DataContext );
+  const { isLogin } = useContext(DataContext);
 
   return (
     <div className="App">
       <Router>
-          <Switch>
-            <Route exact path="/"  component={Login}  />
-            <Route path="/home">
-              <LayoutSidebar>
-                <Header />
-                <Main>
-                  { isLogin.login ? <Route  path="/home/test"  component={Test} /> : <h1>No tienes permisos</h1> }
-                </Main>
-                <Sidebar />
-              </LayoutSidebar>
-            </Route>
-          </Switch>
+        <Switch>
+          <Route exact path="/" component={Login} />
+          <Route path="/home">
+            <LayoutSidebar>
+              <Header />
+              <Main>
+                {/*isLogin.login ? <Route path="/home/test" component={Test} /> : <h1>No tienes permisos</h1>*/}
+                {<Route path="/home/invoices" component={Table} />}
+              </Main>
+              <Sidebar />
+            </LayoutSidebar>
+          </Route>
+        </Switch>
       </Router>
     </div>
   );
