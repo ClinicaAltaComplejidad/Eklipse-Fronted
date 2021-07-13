@@ -13,6 +13,7 @@ import Header from './components/Header';
 import Main from './components/Main';
 import Sidebar from './components/sidebar/Sidebar';
 import Table from './components/table/Table';
+import NotPermssions from './components/notPermissions/Permisions';
 
 function App() {
 
@@ -27,8 +28,8 @@ function App() {
             <LayoutSidebar>
               <Header />
               <Main>
-                {/*isLogin.login ? <Route path="/home/test" component={Test} /> : <h1>No tienes permisos</h1>*/}
-                {<Route path="/home/invoices" component={Table} />}
+                {isLogin.login === false && <NotPermssions />}
+                {isLogin.login && <Route exact ath="/home/invoices" component={Table} />}
               </Main>
               <Sidebar />
             </LayoutSidebar>
