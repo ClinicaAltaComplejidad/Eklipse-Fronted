@@ -32,7 +32,7 @@ function TableData(props) {
                 </span>
                 <span className="export_invoice--excel">
                     <p>Exportar</p>
-                    <i class='bx bx-export'></i>
+                    <i className='bx bx-export'></i>
                 </span>
             </h2>
             <textarea

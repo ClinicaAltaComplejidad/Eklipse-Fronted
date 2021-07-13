@@ -7,13 +7,11 @@ import {
 //components
 import Login from './pages/login/Login';
 import { DataContext } from './context/LoginContext';
-import Test from './components/Test';
 import LayoutSidebar from './pages/sidebarLayout/LayoutSidebar';
 import Header from './components/Header';
 import Main from './components/Main';
 import Sidebar from './components/sidebar/Sidebar';
 import Table from './components/table/Table';
-import NotPermssions from './components/notPermissions/Permisions';
 
 function App() {
 
@@ -28,8 +26,7 @@ function App() {
             <LayoutSidebar>
               <Header />
               <Main>
-                {isLogin.login === false && <NotPermssions />}
-                {isLogin.login && <Route exact ath="/home/invoices" component={Table} />}
+                {isLogin.login && <Route exact path="/home/invoices" component={Table} />}
               </Main>
               <Sidebar />
             </LayoutSidebar>
