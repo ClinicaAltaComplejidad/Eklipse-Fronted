@@ -31,7 +31,8 @@ function TableData(props) {
                     Faturas 📇
                 </span>
                 <span className="export_invoice--excel">
-                    Exportar
+                    <p>Exportar</p>
+                    <i class='bx bx-export'></i>
                 </span>
             </h2>
             <textarea

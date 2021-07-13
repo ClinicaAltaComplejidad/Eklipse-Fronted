@@ -6,9 +6,11 @@
 }
 
 .table_title {
+    align-items: center;
     background-color: #008080;
     color: #ffffff;
     display: flex;
+    justify-content: center;
     height: 10%;
     font-size: 28px;
     text-align: center;
@@ -20,9 +22,27 @@
     display: block;
     display: flex;
     font-size: 22px;
-    height: 100%;
     justify-content: center;
+}
+
+.cuantity_item_invoices {
+    height: 100%;
     width: 20%;
+}
+
+.export_invoice--excel {
+    background-color: #ffffff;
+    border-radius: 10px;
+    color: #008080;
+    cursor: pointer;
+    height: 80%;
+    width: 15%;
+}
+
+.export_invoice--excel:hover {
+    background-color: #008080;
+    color: #ffffff;
+    transition: background 500ms linear;
 }
 
 .invoice_title {
