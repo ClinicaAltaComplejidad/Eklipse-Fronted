@@ -5,7 +5,7 @@ import './table.css';
 function TableData(props) {
 
     const [inputData, setinputData] = useState('');
-    const [invoice, setInvoice] = useState({
+    const [invoices, setInvoice] = useState({
         data: []
     });
     const listInvoices = useInvoiceData();
@@ -23,16 +23,40 @@ function TableData(props) {
 
     return (
         <div className="content_table">
-            <h2 className="table_title">Faturas</h2>
-            <textarea className="content_table_data" onChange={handleInputData}></textarea>
+            <h2 className="table_title">
+                <span className="cuantity_item_invoices">
+                    Cantidad: {invoices.data.length}
+                </span>
+                <span className="invoice_title">
+                    Faturas 📇
+                </span>
+                <span className="export_invoice--excel">
+                    Exportar
+                </span>
+            </h2>
+            <textarea
+                autoFocus
+                placeholder="POR FAVOR DEJA QUE ESCRIBA LA MAQUINA 😋"
+                className="content_table_data"
+                onChange={handleInputData}
+            ></textarea>
             <section className="list_invoices">
                 {
-                    invoice.data.map(i => (
-                        <h1>
-                            {
-                                i.numberInvoice
-                            }
-                        </h1>
+                    invoices.data.map( invoice => (
+                        <div key={invoice.numberInvoice} className="invoice">
+                            <p className="item_invoice number--invoice">{invoice.numberInvoice}</p>
+                            <p className="item_invoice">{invoice.numberOutput}</p>
+                            <p className="item_invoice">{invoice.benefitPlan}</p>
+                            <p className="item_invoice">{invoice.value}</p>
+                            <p className="item_invoice">{invoice.factureDate}</p>
+                            <p className="item_invoice">{invoice.identificationPacient}</p>
+                            <p className="item_invoice">{invoice.namePacient}</p>
+                            <p className="item_invoice">
+                                <span className="invoice--btn_delete">
+                                    Eliminar 💀
+                                </span>
+                            </p>
+                        </div>
                     ))
                 }
             </section>
