@@ -27,7 +27,7 @@ function Sidebar({items}) {
     }, []);
 
     const logout = () => {
-        localStorage.removeItem('token');
+        localStorage.removeItem('id');
         setLogin(false);
         history.push('/');
     }
