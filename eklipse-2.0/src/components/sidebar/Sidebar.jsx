@@ -1,10 +1,11 @@
 import React, { useEffect, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import { DataContext } from '../../context/LoginContext';
+import {Link} from 'react-router-dom';
 
 import './sidebar.css';
 
-function Sidebar() {
+function Sidebar({items}) {
 
     const history = useHistory();
 
@@ -41,13 +42,17 @@ function Sidebar() {
                 <i className='bx bx-menu btn' id="btn"></i>
             </div>
             <ul className="nav_list">
-                <li>
-                    <a href="#">
-                        <i className='bx bx-user' ></i>
-                        <span className="links_name">User</span>
-                    </a>
-                    <span className="tooltip">User</span>
-                </li>
+                {
+                    items.map( item => (
+                        <li key={item.name} >
+                            <Link to={`/home/${item.path}`}>
+                                {item.icon}
+                                <span className="links_name">{item.name}</span>
+                            </Link>
+                            <span className="tooltip">{item.name}</span>
+                        </li>
+                    ))
+                }
             </ul>
             <div className="profile_content">
                 <div className="profile">
