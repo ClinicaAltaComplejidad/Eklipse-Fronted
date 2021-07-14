@@ -1,8 +1,14 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useContext } from 'react';
+import { useHistory } from 'react-router-dom';
+import { DataContext } from '../../context/LoginContext';
 
 import './sidebar.css';
 
 function Sidebar() {
+
+    const history = useHistory();
+
+    const {setLogin} = useContext(DataContext);
 
     useEffect(() => {
         let btn = document.getElementById("btn");
@@ -18,6 +24,12 @@ function Sidebar() {
         });
 
     }, []);
+
+    const logout = () => {
+        localStorage.removeItem('token');
+        setLogin(false);
+        history.push('/');
+    }
 
 
     return (
@@ -39,7 +51,7 @@ function Sidebar() {
             </ul>
             <div className="profile_content">
                 <div className="profile">
-                    <i className='bx bx-log-out log_out' id="log_out" ></i>
+                    <i className='bx bx-log-out log_out' id="log_out" onClick={logout} ></i>
                 </div>
             </div>
         </div>
