@@ -1,6 +1,6 @@
 function useToken() {
 
-    const storage = localStorage.getItem('token');
+    const storage = localStorage.getItem('id');
 
     return storage != null ? storage : null;
 

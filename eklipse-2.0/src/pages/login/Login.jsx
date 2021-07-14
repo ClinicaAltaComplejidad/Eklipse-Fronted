@@ -36,7 +36,7 @@ function Login() {
             .then(response => response.json())
             .then(data => {
                 if (data.Message === 'OK') {
-                    localStorage.setItem('token', data.token);
+                    localStorage.setItem('id', data.token);
                     setLogin({
                         login: true,
                     });
