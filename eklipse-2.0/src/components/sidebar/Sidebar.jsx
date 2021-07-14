@@ -36,13 +36,6 @@ function Sidebar() {
                     </a>
                     <span className="tooltip">User</span>
                 </li>
-                <li>
-                    <a href="#">
-                        <i className='bx bx-chat' ></i>
-                        <span className="links_name">Messages</span>
-                    </a>
-                    <span className="tooltip">Messages</span>
-                </li>
             </ul>
             <div className="profile_content">
                 <div className="profile">

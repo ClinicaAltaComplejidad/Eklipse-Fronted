@@ -1,7 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import useInvoiceData from '../../hooks/useInvoice';
-import { CSVLink } from 'react-csv';
+import ReactExportData from 'react-data-export';
 import './table.css';
+
+const ExcelFile = ReactExportData.ExcelFile;
+const ExcelSheet = ReactExportData.ExcelFile.ExcelSheet;
+
 
 function TableData(props) {
 
@@ -23,27 +27,33 @@ function TableData(props) {
         });
     }, [inputData]);
 
-    const exportCsv = () => {
-        const headers = [
-            { label: "Numero de factura", key: "numberInvoce" },
-            { label: "Numero de salida", key: "numberOutput" },
-            { label: "Plan de beneficio", key: "benefitPlan" },
-            { label: "Valor", key: "value" },
-            { label: "Fecha de factura", key: "invoiceDate" },
-            { label: "Identificacion", key: "identificationPacient" },
-            { label: "Nombre de paciente", key: "namePacient" },
+    const exportExcel = () => {
+        const DataSet = [
+                {
+                    columns : [
+                        { title: "Numero de factura" },
+                        { title: "Numero de salida" },
+                        { title: "Plan de beneficio"},
+                        { title: "Valor"},
+                        { title: "Fecha de factura"},
+                        { title: "Identificacion"},
+                        { title: "Nombre de paciente"},
+                    ],
+                    data: invoices.data.map(row => [
+                        {value: row.numberInvoice},
+                        {value: row.numberOutput},
+                        {value: row.benefitPlan},
+                        {value: row.value},
+                        {value: row.invoiceDate},
+                        {value: row.identificationPacient},
+                        {value: row.namePacient}
+                    ])
+                }
         ];
-
-        const csvReport = {
-            data: invoices.data,
-            headers: headers,
-            filename: Date.now() + 'factrura' + '.csv'
-        };
-
-        return csvReport;
+        return DataSet;
     }
 
-    const openModalForDownloadCSV = () => openModal === false ? setOpenModal(true) : setOpenModal(false);
+    const openModalForDownloadExcel = () => openModal === false ? setOpenModal(true) : setOpenModal(false);
 
     return (
         <div className="content_table">
@@ -54,7 +64,7 @@ function TableData(props) {
                 <span className="invoice_title">
                     Faturas 📇
                 </span>
-                <span className="export_invoice--excel" onClick={openModalForDownloadCSV}>
+                <span className="export_invoice--excel" onClick={openModalForDownloadExcel}>
                     <p>Exportar</p>
                     <i className='bx bx-export'></i>
                 </span>
@@ -72,9 +82,9 @@ function TableData(props) {
                             <p className="item_invoice number--invoice">{invoice.numberInvoice}</p>
                             <p className="item_invoice">{invoice.numberOutput}</p>
                             <p className="item_invoice">{invoice.benefitPlan}</p>
-                            <p className="item_invoice">{invoice.value}</p>
+                            <p className="item_invoice">{Number(invoice.value)}</p>
                             <p className="item_invoice">{invoice.invoiceDate}</p>
-                            <p className="item_invoice">{invoice.identificationPacient}</p>
+                            <p className="item_invoice">{Number(invoice.identificationPacient)}</p>
                             <p className="item_invoice">{invoice.namePacient}</p>
                             <p className="item_invoice">
                                 <span className="invoice--btn_delete">
@@ -90,7 +100,16 @@ function TableData(props) {
                     CONFIRMAR DESCARGA 😀
                 </h2>
                 <section className="content_btn">
-                    <CSVLink  {...exportCsv() } className="btn_download_csv" >Descargar csv</CSVLink>
+                    <ExcelFile
+                        filename={Date.now() + 'factura'}
+                        element={
+                            <button className="btn_download_csv">
+                                Descargar Excel 
+                            </button>
+                        }
+                    >
+                        <ExcelSheet dataSet={exportExcel()} name="Reporte De Facturas"/>
+                    </ExcelFile>
                 </section>
             </section>
         </div>
