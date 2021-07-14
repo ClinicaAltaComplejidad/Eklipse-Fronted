@@ -13,7 +13,7 @@ function useInvoiceData() {
             numberOutput: element[1],
             benefitPlan: element[2],
             value: element[3],
-            factureDate: element[4],
+            invoiceDate: element[4],
             identificationPacient: element[5],
             namePacient: element[6]
         }
