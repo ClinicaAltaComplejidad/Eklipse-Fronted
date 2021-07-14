@@ -6,10 +6,10 @@ import './table.css';
 const ExcelFile = ReactExportData.ExcelFile;
 const ExcelSheet = ReactExportData.ExcelFile.ExcelSheet;
 
-
 function TableData(props) {
 
     const [inputData, setinputData] = useState('');
+    const [cuantityInvoices, setCuantityInvoices] = useState(0);
     const [openModal, setOpenModal] = useState(false);
     const [invoices, setInvoice] = useState({
         data: []
@@ -25,6 +25,7 @@ function TableData(props) {
         setInvoice( {
             data: listInvoices
         });
+        setCuantityInvoices(invoices.data.length);
     }, [inputData]);
 
     const exportExcel = () => {
@@ -55,11 +56,19 @@ function TableData(props) {
 
     const openModalForDownloadExcel = () => openModal === false ? setOpenModal(true) : setOpenModal(false);
 
+    const deleteInvoice = (numberInvoice) => {
+        let newListInvoices = invoices.data.filter(item => item.numberInvoice !== numberInvoice);
+        setInvoice({
+            data: newListInvoices
+        });
+        setCuantityInvoices(newListInvoices.length);
+    }
+
     return (
         <div className="content_table">
             <h2 className="table_title">
                 <span className="cuantity_item_invoices">
-                    Cantidad: {invoices.data.length}
+                    Cantidad: {cuantityInvoices}
                 </span>
                 <span className="invoice_title">
                     Faturas 📇
@@ -87,7 +96,10 @@ function TableData(props) {
                             <p className="item_invoice">{Number(invoice.identificationPacient)}</p>
                             <p className="item_invoice">{invoice.namePacient}</p>
                             <p className="item_invoice">
-                                <span className="invoice--btn_delete">
+                                <span
+                                    className="invoice--btn_delete"
+                                    onClick={(e) => deleteInvoice(invoice.numberInvoice) }
+                                >
                                     Eliminar 💀
                                 </span>
                             </p>
@@ -95,6 +107,7 @@ function TableData(props) {
                     ))
                 }
             </section>
+            {/** Modal */}
             <section className={`download_csv_confirm_modal ${ openModal ? 'open_modal' : 'close_modal '}`}>
                 <h2 className="modal_title">
                     CONFIRMAR DESCARGA 😀

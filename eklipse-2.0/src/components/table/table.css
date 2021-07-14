@@ -92,6 +92,7 @@
 .invoice--btn_delete {
     align-items: center;
     background-color: #008080;
+    cursor: pointer;
     border-radius: 8px;
     color: #fafbfd;
     display: flex;
