@@ -33,7 +33,7 @@ function TableData(props) {
                 {
                     columns : [
                         { title: "Numero de factura" },
-                        { title: "Numero de salida" },
+                        { title: "Numero de ingreso" },
                         { title: "Plan de beneficio"},
                         { title: "Valor"},
                         { title: "Fecha de factura"},
