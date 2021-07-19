@@ -87,7 +87,7 @@ function Login() {
                         </section>
                         <Input
                             actionInput={handleInput}
-                            name="userName"
+                            name="pass"
                             type="password"
                             text="Contraseña"
                             className="input input__normal"
