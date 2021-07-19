@@ -4,7 +4,6 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {DataProvider} from './context/LoginContext';
-//libraries
 
 
 ReactDOM.render(

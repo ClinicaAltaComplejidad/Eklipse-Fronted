@@ -11,9 +11,7 @@ function Input({text, className, actionInput, value, name, type}) {
             value={value}
             name={name}
             type={type}
-        >
-            {text}
-        </input>
+        />
     )
 }
 

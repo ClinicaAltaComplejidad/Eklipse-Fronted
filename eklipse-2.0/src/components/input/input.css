@@ -1,0 +1,19 @@
+.input {
+    text-align: center;
+    border: 1px solid #008080;
+    border-radius: 5px;
+}
+
+.input:focus { 
+    outline: none;
+}
+
+.input__normal {
+    height: 30px;
+    width: 180px;
+}
+
+.input__large {
+    height: 40px;
+    width: 200px;
+}
