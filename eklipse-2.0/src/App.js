@@ -12,6 +12,7 @@ import Header from './components/hearder/Header';
 import Main from './components/Main';
 import Sidebar from './components/sidebar/Sidebar';
 import Table from './components/table/Table';
+import Ui from './components/Ui';
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
               <Header />
               <Main>
                 {isLogin.login && <Route exact path="/home/invoices" component={Table} />}
+                <Route  exact path="/home/test" component={Ui}  /> 
               </Main>
               <Sidebar items={ [ {name: 'Facturas',  path: 'invoices', icon: <i className='bx bx-cabinet'></i>} ]} />
             </LayoutSidebar>
