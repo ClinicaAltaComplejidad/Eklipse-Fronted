@@ -7,7 +7,10 @@ function Ui() {
     return (
         <div>
             <Button text="soy un boton"></Button>
-            <Input></Input>
+            <Input
+             text='soy un input'
+             className='input'
+            ></Input>
         </div>
     )
 }

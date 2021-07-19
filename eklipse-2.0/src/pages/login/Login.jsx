@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import {useHistory} from 'react-router-dom';
 import { DataContext } from '../../context/LoginContext';
 //librarie
-import { Input } from '@chakra-ui/react';
+import Input from '../../components/input/Input';
 import backgroundImage from '../../assets/img/backgroun_form.jpg';
 import keyImage from '../../assets/img/key.svg';
 import userImage from '../../assets/img/user.svg';

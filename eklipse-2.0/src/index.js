@@ -5,16 +5,13 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {DataProvider} from './context/LoginContext';
 //libraries
-import { ChakraProvider } from '@chakra-ui/react';
 
 
 ReactDOM.render(
   <StrictMode>
-    <ChakraProvider>
     <DataProvider>
       <App />
     </DataProvider>
-    </ChakraProvider>
   </StrictMode>,
   document.getElementById('root')
 );
