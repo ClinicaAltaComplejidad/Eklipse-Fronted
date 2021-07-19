@@ -74,11 +74,11 @@ function Login() {
                             <img src={userImage} alt="" width="200" loading="lazy" />
                         </section>
                         <Input
-                            onChange={handleInput}
+                            actionInput={handleInput}
                             name="userName"
                             type="text"
-                            variant="outline"
-                            placeholder="Usuario"
+                            text="Usuario"
+                            className="input input__normal"
                         />
                     </div>
                     <div className="form_input_container">
@@ -86,11 +86,11 @@ function Login() {
                             <img src={keyImage} alt="" width="200" loading="lazy" />
                         </section>
                         <Input
-                            onChange={handleInput}
-                            name="pass"
+                            actionInput={handleInput}
+                            name="userName"
                             type="password"
-                            variant="outline"
-                            placeholder="Contraseña"
+                            text="Contraseña"
+                            className="input input__normal"
                         />
                     </div>
                     <div className="form_input_container form_input_container--input-buttom ">

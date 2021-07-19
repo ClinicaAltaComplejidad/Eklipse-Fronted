@@ -27,17 +27,15 @@
 }
 
 .form_image_container img {
-    border-top-left-radius: 2%;
-    border-top-right-radius: 2%;
+    border-radius: 2%;
     width: 100%;
     height: 100%;
 }
 
 .luxury_background_for_image {
     background: linear-gradient(22deg, rgba(3,151,136,1) 50%, rgba(133,231,251,1) 100%);
-    border-top-left-radius: 2%;
-    border-top-right-radius: 2%;
     display: flex;
+    border-radius: 2%;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -65,7 +63,7 @@
 }
 
 .form_title {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 700;
     height: 30px;
     text-align: center;
@@ -75,36 +73,53 @@
 }
 
 .form_input_container {
-    border-radius: 15%;
     display: flex;
-    justify-content: center;
-    align-items: center;
     height: 40px;
     margin-top: 8px;
-    width: 65%;
+    width: 70%;
 }
 
-.form_input_container input {
+.form_input_container .input{
+    width: 80%;
     cursor: pointer;
     font-weight: 600;
+    text-align: justify;
+    padding: 0 15px;
+    margin: 5px 0;
     box-shadow: 0px 5px 4px -1px rgba(99,99,99,0.76);
 }
 
+.form_icon_container{
+    width: 20%;
+}
+
+.form_icon_container > img {
+    height: 100%;
+    width: 100%;
+}
+
 .form_input_container--input-buttom {
+    border-radius: 10px;
     background-color: #008080;
     color: #ffffff;
-    width: 25%;
+    width: 35%;
+}
+
+.form-input_button {
+    background-color: #009c8c;
+    border: none;
+    border-radius: 10px;
+    color: #ffffff;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
 }
 
 .form-input_button:hover {
-    background-color: #009c8c;
-}
-
-.form_icon_container {
-    border-radius: 5%;
-    margin-right: 5px;
-    width: 45px;
-    height: 96%;
+    background-color: #ffffff;
+    border: 1px solid #008080;
+    color: #008080;
+    transition: background 120ms linear; 
 }
 
 .container_logo_clinica {
@@ -120,10 +135,11 @@
         height: 100%;
         width: 60%;
     }
+    
     .luxury_background_for_image {
-        border-radius: 0;
         height: 100%;
     }
+
     .form_title_luxury {
         font-size: 110px;
     } 
