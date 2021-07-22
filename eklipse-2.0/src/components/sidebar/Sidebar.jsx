@@ -1,11 +1,20 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import { DataContext } from '../../context/LoginContext';
 import {Link} from 'react-router-dom';
+import Logo from '../../assets/img/marca_de_agua.png';
 
 import './sidebar.css';
 
-function Sidebar({items}) {
+const items = [
+    {name: 'Facturas',  path: 'invoices', icon: <i className='bx bx-cabinet'></i>},
+    {name: 'Facturas',  path: 'invoices', icon: <i className='bx bx-cabinet'></i>},
+    {name: 'Facturas',  path: 'invoices', icon: <i className='bx bx-cabinet'></i>},
+    {name: 'Facturas',  path: 'invoices', icon: <i className='bx bx-cabinet'></i>},
+    {name: 'Facturas',  path: 'invoices', icon: <i className='bx bx-cabinet'></i>}
+]
+
+function Sidebar() {
 
     const history = useHistory();
 
@@ -17,18 +26,17 @@ function Sidebar({items}) {
         history.push('/');
     }
 
-
     return (
         <div className="sidebar" id="sidebar">
-            <div className="logo_content">
-                <div className="logo">
-                    <div className="logo_name">EKLIPSE 🚀</div>
-                </div>
-            </div>
+            <section className="logo_content">
+                <img src={Logo}  alt="" width="200" />
+            </section>
             <ul className="nav_list">
                 {
                     items.map( item => (
-                        <li key={item.name} >
+                        <li key={item.name}
+                            className="link_page"
+                        >
                             <Link to={`/home/${item.path}`}>
                                 {item.icon}
                                 <span className="links_name">{item.name}</span>
@@ -37,10 +45,8 @@ function Sidebar({items}) {
                     ))
                 }
             </ul>
-            <div className="profile_content">
-                <div className="profile">
-                    <i className='bx bx-log-out log_out' id="log_out" onClick={logout} ></i>
-                </div>
+            <div className="btn_logout_content">
+                <i className='bx bx-log-out log_out' id="log_out" onClick={logout} ></i>
             </div>
         </div>
     )

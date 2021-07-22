@@ -28,7 +28,7 @@ function App() {
               <Main>
                 {isLogin.login && <Route exact path="/home/invoices" component={Table} />}
               </Main>
-              <Sidebar items={ [ {name: 'Facturas',  path: 'invoices', icon: <i className='bx bx-cabinet'></i>} ]} />
+              <Sidebar />
             </Layout>
           </Route>
         </Switch>
