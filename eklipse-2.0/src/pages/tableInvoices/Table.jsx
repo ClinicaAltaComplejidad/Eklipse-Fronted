@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import useInvoiceData from '../../hooks/useInvoice';
+import parseInvoiceData from '../../utils/parseInvoice';
 import ReactExportData from 'react-data-export';
 import './table.css';
 
@@ -14,7 +14,7 @@ function TableData(props) {
     const [invoices, setInvoice] = useState({
         data: []
     });
-    const listInvoices = useInvoiceData();
+    const listInvoices = parseInvoiceData();
 
     const handleInputData = (e) => {
         setinputData(e.target.value);
@@ -100,7 +100,7 @@ function TableData(props) {
                                     className="invoice--btn_delete"
                                     onClick={(e) => deleteInvoice(invoice.numberInvoice) }
                                 >
-                                    Eliminar 💀
+                                    Eliminar
                                 </span>
                             </p>
                         </div>

@@ -6,16 +6,13 @@ import {
 } from "react-router-dom";
 //components
 import Login from './pages/login/Login';
-import { DataContext } from './context/LoginContext';
 import Layout from './pages/layout/Layout';
 import Header from './components/hearder/Header';
 import Main from './components/main/Main';
 import Sidebar from './components/sidebar/Sidebar';
-import Table from './pages/tableInvoices/Table';
+import TableInvoices from './pages/tableInvoices/Table';
 
 function App() {
-
-  const { isLogin } = useContext(DataContext);
 
   return (
     <div className="App">
@@ -26,7 +23,7 @@ function App() {
             <Layout>
               <Header />
               <Main>
-                {isLogin.login && <Route exact path="/home/invoices" component={Table} />}
+                <Route exact path="/home/invoices" component={TableInvoices} />
               </Main>
               <Sidebar />
             </Layout>

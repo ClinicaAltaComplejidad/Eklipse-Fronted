@@ -1,4 +1,4 @@
-function useInvoiceData() {
+function parseInvoiceData() {
     
     let dataResponse = [];
     const invoices =  localStorage.getItem('lista') !== null ? localStorage.getItem('lista').split('\n'): [];
@@ -24,4 +24,4 @@ function useInvoiceData() {
     return dataResponse;
 }
 
-export default useInvoiceData;
+export default parseInvoiceData;

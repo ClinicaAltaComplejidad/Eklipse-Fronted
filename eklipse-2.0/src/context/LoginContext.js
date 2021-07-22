@@ -1,4 +1,4 @@
-import useToken from '../hooks/useToken';
+import getToken from '../utils/getToken';
 import { createContext, useState } from 'react';
 
 export const DataContext = createContext();
@@ -7,7 +7,7 @@ export const DataProvider= ({children}) => {
 
 
     const [isLogin, setLogin] = useState({
-        login: useToken() === null ? false : true,
+        login: getToken() === null ? false : true,
     });
 
     return (

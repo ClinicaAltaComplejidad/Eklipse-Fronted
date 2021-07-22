@@ -8,10 +8,6 @@ import './sidebar.css';
 
 const items = [
     {name: 'Facturas',  path: 'invoices', icon: <i className='bx bx-cabinet'></i>},
-    {name: 'Facturas',  path: 'invoices', icon: <i className='bx bx-cabinet'></i>},
-    {name: 'Facturas',  path: 'invoices', icon: <i className='bx bx-cabinet'></i>},
-    {name: 'Facturas',  path: 'invoices', icon: <i className='bx bx-cabinet'></i>},
-    {name: 'Facturas',  path: 'invoices', icon: <i className='bx bx-cabinet'></i>}
 ]
 
 function Sidebar() {
