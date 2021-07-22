@@ -14,12 +14,17 @@ function TableData(props) {
     const [invoices, setInvoice] = useState({
         data: []
     });
+
     const listInvoices = parseInvoiceData();
 
     const handleInputData = (e) => {
         setinputData(e.target.value);
         localStorage.setItem('lista', inputData); 
     }
+
+    useEffect(() => {
+        setCuantityInvoices(invoices.data.length);
+    }, []);
     
     useEffect(() => {
         setInvoice( {
@@ -71,7 +76,7 @@ function TableData(props) {
                     Cantidad: {cuantityInvoices}
                 </span>
                 <span className="invoice_title">
-                    Faturas 📇
+                    Facturas 📇
                 </span>
                 <span className="export_invoice--excel" onClick={openModalForDownloadExcel}>
                     <p>Exportar</p>
