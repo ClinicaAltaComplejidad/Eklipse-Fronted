@@ -7,11 +7,11 @@ import {
 //components
 import Login from './pages/login/Login';
 import { DataContext } from './context/LoginContext';
-import LayoutSidebar from './pages/sidebarLayout/LayoutSidebar';
+import Layout from './pages/layout/Layout';
 import Header from './components/hearder/Header';
-import Main from './components/Main';
+import Main from './components/main/Main';
 import Sidebar from './components/sidebar/Sidebar';
-import Table from './components/table/Table';
+import Table from './pages/tableInvoices/Table';
 
 function App() {
 
@@ -23,13 +23,13 @@ function App() {
         <Switch>
           <Route exact path="/" component={Login} />
           <Route path="/home">
-            <LayoutSidebar>
+            <Layout>
               <Header />
               <Main>
                 {isLogin.login && <Route exact path="/home/invoices" component={Table} />}
               </Main>
               <Sidebar items={ [ {name: 'Facturas',  path: 'invoices', icon: <i className='bx bx-cabinet'></i>} ]} />
-            </LayoutSidebar>
+            </Layout>
           </Route>
         </Switch>
       </Router>

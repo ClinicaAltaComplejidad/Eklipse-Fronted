@@ -3,7 +3,7 @@ import React from 'react'
 //styles
 import './layout.css';
 
-function LayoutSidebar({children}) {
+function Layout({children}) {
     return (
         <div className="layout">
             {children}
@@ -11,4 +11,4 @@ function LayoutSidebar({children}) {
     )
 }
 
-export default LayoutSidebar;
+export default Layout;
