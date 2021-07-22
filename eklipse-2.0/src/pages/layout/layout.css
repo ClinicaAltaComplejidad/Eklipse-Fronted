@@ -1,5 +1,4 @@
 .layout {
-    background-color: #fafbfd;
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: repeat(8, 1fr);
@@ -18,12 +17,14 @@
 }
 
 .header_layout {
+    background-color: #ffffff;
     grid-area: header;
     height: 100%;
     width: 100%;
 }
 
 .sidebar {
+    background-color: #ffffff;
     grid-area: sidebar;
     height: 100%;
     width: 100%;
