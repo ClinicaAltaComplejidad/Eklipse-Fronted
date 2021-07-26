@@ -5,14 +5,9 @@
     flex-direction: column;
 }
 
-.table_action {
-    background-color: #00a6f0;
-    height: 15%;
-    width: 100%;
-}
-
 .footer_table {
-    background-color: #00a6f0;
+    background-color: #ffffff;
+    border-top: 1px solid #d3d3d3;
     height: 8%;
     width: 100%;
 }

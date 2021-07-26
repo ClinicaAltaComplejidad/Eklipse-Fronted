@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './table.css';
-
+import TableAction from './tableAction/TableAction';
 import TableBody from './tableBody/TableBody';
 import TableHeader from './tableHeader/TableHeader';
 
@@ -69,9 +69,17 @@ const headers = [
 function Table() {
     return (
         <section className="table">
-            <div className="table_action">
-                Table Actions
-            </div>
+            <TableAction 
+                actionTitle="JORNADA DIETAS"
+                actionBody={
+                   <input  placeholder="filtrar"/>
+                }
+                actions={
+                    <button>
+                        Recargar
+                    </button>
+                }
+            />
             <TableHeader 
                 headers={headers}
             />
