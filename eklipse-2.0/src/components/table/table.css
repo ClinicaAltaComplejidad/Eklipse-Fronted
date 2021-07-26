@@ -4,10 +4,3 @@
     height: 90%;
     flex-direction: column;
 }
-
-.footer_table {
-    background-color: #ffffff;
-    border-top: 1px solid #d3d3d3;
-    height: 8%;
-    width: 100%;
-}

@@ -3,6 +3,7 @@ import React from 'react';
 import './table.css';
 import TableAction from './tableAction/TableAction';
 import TableBody from './tableBody/TableBody';
+import TableFooter from './tableFooter/TableFooter';
 import TableHeader from './tableHeader/TableHeader';
 
 const dataFixed = [
@@ -86,11 +87,19 @@ function Table() {
             <TableBody 
                 bodyItems={dataFixed}
             />
-            <footer className="footer_table">
-                <p>
-                    Hola
-                </p>
-            </footer>
+            <TableFooter
+                footerTitle="Titulo footer"
+                pagination={
+                   <div>
+                        <button>
+                            Atrás
+                        </button>
+                        <button>
+                            Ver Más
+                        </button>
+                   </div>
+                }
+            />
         </section>
     )
 }
