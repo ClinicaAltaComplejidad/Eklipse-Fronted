@@ -2,6 +2,9 @@ import React from 'react';
 
 import './table.css';
 
+import TableBody from './tableBody/TableBody';
+import TableHeader from './tableHeader/TableHeader';
+
 const dataFixed = [
     {
         codeBed: 'CMOBSM04',
@@ -30,10 +33,38 @@ const dataFixed = [
         type: 'HIPOSODICA',
         consistency: 'NORMAL',
         evolutionaryDoctor: 'PEPE' 
+    },
+    {
+        codeBed: 'CMOBSM071',
+        namePatient: 'Maria Lopez',
+        type: 'HIPOSODICA',
+        consistency: 'NORMAL',
+        evolutionaryDoctor: 'PEPE' 
+    },
+    {
+        codeBed: 'CMOBSM072',
+        namePatient: 'Maria Lopez',
+        type: 'HIPOSODICA',
+        consistency: 'NORMAL',
+        evolutionaryDoctor: 'PEPE' 
+    },
+    {
+        codeBed: 'CMOBSM0171',
+        namePatient: 'Maria Lopez',
+        type: 'HIPOSODICA',
+        consistency: 'NORMAL',
+        evolutionaryDoctor: 'PEPE' 
     }
+    
 ]
 
-
+const headers = [
+    'Cama',
+    'Paciente',
+    'Tipo',
+    'Consistencia',
+    'Médico'
+]
 
 function Table() {
     return (
@@ -41,38 +72,12 @@ function Table() {
             <div className="table_action">
                 Table Actions
             </div>
-            <div className="header_table">
-                <h2 className="header_title_table">Cama</h2>
-                <h2 className="header_title_table">Paciente</h2>
-                <h2 className="header_title_table">Tipo</h2>
-                <h2 className="header_title_table">Consistencia</h2>
-                <h2 className="header_title_table">Médico</h2>
-            </div>
-            <div className="body_table">
-                {
-                    dataFixed.map(data => (
-                        <div key={data.codeBed} className="item">
-                            <p className="item_data">
-                                <span className="code_bed">
-                                    {data.codeBed}
-                                </span>
-                            </p>
-                            <p className="item_data">
-                                {data.namePatient}
-                            </p>
-                            <p className="item_data">
-                                {data.type}
-                            </p>
-                            <p className="item_data">
-                                {data.consistency}
-                            </p>
-                            <p className="item_data">
-                                {data.evolutionaryDoctor}
-                            </p>
-                        </div>
-                    ))
-                }
-            </div>
+            <TableHeader 
+                headers={headers}
+            />
+            <TableBody 
+                bodyItems={dataFixed}
+            />
             <footer className="footer_table">
                 <p>
                     Hola
