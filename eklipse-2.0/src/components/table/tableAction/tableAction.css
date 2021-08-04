@@ -1,0 +1,18 @@
+.table_action {
+    background-color: #ffffff;
+    border-bottom:1px solid #d3d3d3;
+    display: flex;
+    justify-content: space-around;
+    height: 15%;
+    width: 100%;
+}
+
+.action_title, .body_action {
+    width: 20%;
+}
+.body_action {
+    width: 60%;
+}
+.actions {
+    width: 10%;
+}

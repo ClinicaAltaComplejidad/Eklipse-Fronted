@@ -1,0 +1,15 @@
+
+.header_table {
+    background-color: #ffffff;
+    border-bottom:1px solid #d3d3d3;
+    display: flex;
+    height: 8%;
+    width: 100%;
+}
+
+.header_title_table {
+    width: 20%;
+    font-size: 18px;
+    text-align: center;
+    padding-top: 5px;
+}

@@ -1,0 +1,19 @@
+.footer_table {
+    background-color: #ffffff;
+    border-top: 1px solid #d3d3d3;
+    height: 8%;
+    width: 100%;
+}
+
+.table_footer {
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer_title {
+    width: 30%;
+}
+
+.footer_pagination {
+    width: 60%;
+}

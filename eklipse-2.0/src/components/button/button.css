@@ -1,0 +1,42 @@
+.button {
+    background-color: #008080;
+    border-radius: 10px;
+    color: #ffffff;
+}
+
+.button__normal {
+    font-size: 16px;
+    height: 50px;
+    width: 120px;
+}
+
+.button__small {
+    font-size: 14px;
+    height: 40px;
+    width: 80px;
+}
+
+.button__large {
+    font-size: 18px;
+    height: 40px;
+    width: 140px;
+}
+
+.button--warning {
+    background-color: #ff0000;
+}
+
+.button__normal:hover, .button__large:hover, .button__small:hover {
+    background-color: #ffffff;
+    border: 1px solid #008080;
+    color: #008080;
+    transition: background 100ms linear;
+}
+
+.button--warning:hover {
+    background-color: #ffffff;
+    border:1px solid #ff0000;
+    color: #ff0000;
+    font-weight: 700;
+    transition: background 100ms linear;
+}
