@@ -1,6 +1,3 @@
-import React, { useContext } from 'react';
-import { useHistory } from 'react-router-dom';
-import { DataContext } from '../../context/LoginContext';
 import {Link} from 'react-router-dom';
 import Logo from '../../assets/img/marca_de_agua.png';
 
@@ -11,16 +8,6 @@ const items = [
 ]
 
 function Sidebar() {
-
-    const history = useHistory();
-
-    const {setLogin} = useContext(DataContext);
-
-    const logout = () => {
-        localStorage.removeItem('id');
-        setLogin(false);
-        history.push('/');
-    }
 
     return (
         <div className="sidebar" id="sidebar">
@@ -33,7 +20,7 @@ function Sidebar() {
                         <li key={item.name}
                             className="link_page"
                         >
-                            <Link to={`/home/${item.path}`}>
+                            <Link to={`/`}>
                                 {item.icon}
                                 <span className="links_name">{item.name}</span>
                             </Link>
@@ -41,8 +28,7 @@ function Sidebar() {
                     ))
                 }
             </ul>
-            <div className="btn_logout_content">
-                <i className='bx bx-log-out log_out' id="log_out" onClick={logout} ></i>
+            <div className="btn_logout_content" >
             </div>
         </div>
     )

@@ -32,16 +32,16 @@
     width: 100%;
 }
 
-.btn_logout_content i {
+.btn_logout_content p  {
     background-color: #00a6f0;
     border-radius: 25px;
     color: #ffffff;
     cursor: pointer;
     display: block;
     padding: 8px 0;
-    font-size: 25px;
+    font-size: 20px;
     text-align: center;
-    width: 50%;
+    width: 90%;
 }
 
 .link_page {

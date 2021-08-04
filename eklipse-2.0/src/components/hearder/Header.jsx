@@ -27,7 +27,6 @@ function Header() {
                 </h1>
             </section>
             <section className="header_body">
-                Otra Cosa
             </section>
             <section className="content_image_header">
                 <img src={LogoAtomo} alt=""  width="100" loading="lazy" /> 

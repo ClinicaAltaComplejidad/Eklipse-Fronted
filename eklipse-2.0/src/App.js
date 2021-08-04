@@ -5,11 +5,9 @@ import {
   Route,
 } from "react-router-dom";
 //components
-import Login from './pages/login/Login';
 import Header from './components/hearder/Header';
 import Main from './components/main/Main';
 import Sidebar from './components/sidebar/Sidebar';
-import Table from './components/table/Table';
 import Layout from './pages/layout/Layout';
 import TableInvoices from './pages/tableInvoices/Table';
 
@@ -19,13 +17,11 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
-          <Route exact path="/" component={Login} />
-          <Route path="/home">
+          <Route path="/">
             <Layout>
               <Header />
               <Main>
-                <Route exact path="/home/invoices" component={TableInvoices} />
-                <Route exact path="/home/table" component={Table} />
+                <Route exact path="/" component={TableInvoices} />
               </Main>
               <Sidebar />
             </Layout>
