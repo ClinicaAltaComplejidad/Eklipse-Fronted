@@ -23,7 +23,6 @@ function App() {
               <Main>
                 <Route exact path="/" component={TableInvoices} />
               </Main>
-              <Sidebar />
             </Layout>
           </Route>
         </Switch>

@@ -6,31 +6,34 @@ import './table.css';
 const ExcelFile = ReactExportData.ExcelFile;
 const ExcelSheet = ReactExportData.ExcelFile.ExcelSheet;
 
-function TableData(props) {
+function TableData() {
 
     const [inputData, setinputData] = useState('');
-    const [cuantityInvoices, setCuantityInvoices] = useState(0);
     const [openModal, setOpenModal] = useState(false);
     const [invoices, setInvoice] = useState({
         data: []
     });
 
     const listInvoices = parseInvoiceData();
+    console.log('lista de invoices -> ', listInvoices );
 
     const handleInputData = (e) => {
         setinputData(e.target.value);
         localStorage.setItem('lista', inputData); 
     }
 
-    useEffect(() => {
-        setCuantityInvoices(invoices.data.length);
-    }, []);
+    const clearTable = (e) => {
+        setInvoice({
+            data:  []
+        });
+        localStorage.removeItem('lista');
+    }
+
     
     useEffect(() => {
         setInvoice( {
             data: listInvoices
         });
-        setCuantityInvoices(invoices.data.length);
     }, [inputData]);
 
     const exportExcel = () => {
@@ -66,14 +69,12 @@ function TableData(props) {
         setInvoice({
             data: newListInvoices
         });
-        setCuantityInvoices(newListInvoices.length);
     }
 
     return (
         <div className="content_table">
             <h2 className="table_title">
                 <span className="cuantity_item_invoices">
-                    Cantidad: {cuantityInvoices}
                 </span>
                 <span className="invoice_title">
                     Facturas 📇
@@ -95,7 +96,7 @@ function TableData(props) {
                         <div key={invoice.numberInvoice} className="invoice">
                             <p className="item_invoice number--invoice">{invoice.numberInvoice}</p>
                             <p className="item_invoice">{invoice.numberOutput}</p>
-                            <p className="item_invoice">{invoice.benefitPlan}</p>
+                            <p className="item_invoice item_invoice--benefitPlant">{invoice.benefitPlan}</p>
                             <p className="item_invoice">{Number(invoice.value)}</p>
                             <p className="item_invoice">{invoice.invoiceDate}</p>
                             <p className="item_invoice">{Number(invoice.identificationPacient)}</p>
@@ -121,7 +122,7 @@ function TableData(props) {
                     <ExcelFile
                         filename={Date.now() + 'factura'}
                         element={
-                            <button className="btn_download_csv">
+                            <button className="btn_download_csv" onClick={clearTable} >
                                 Descargar Excel 
                             </button>
                         }

@@ -63,7 +63,7 @@
     border: 1px solid #00a6f0;
     display: flex;
     flex-direction: column;
-    height: 80%;
+    height: 90%;
     overflow-y: scroll;
     width: 100%;
 }
@@ -80,9 +80,13 @@
     border: 1px solid gray;
     display: flex;
     flex-direction: column;
-    font-size: 14px;
+    font-size: 12px;
     justify-content: center;
-    width: 13%;
+    width: 15%;
+}
+
+.item_invoice--benefitPlant {
+    overflow-y: scroll;
 }
 
 .number--invoice {
